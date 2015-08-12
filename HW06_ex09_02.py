@@ -11,13 +11,29 @@
 #   - print each approved word on new line, followed at the end by the %
 ##############################################################################
 # Imports
+def has_no_e():
+	total_lines=0
+	non_e_lines=0
+	f=open('words.txt','r')
+	for line in f:
+		total_lines+=1
+		if 'e' not in line:
+			non_e_lines+=1
+			print line                                        #Printing lines without an 'e'
+	print 'There are %d words without e' %non_e_lines
+	percentage= (non_e_lines/float(total_lines)) * 100
+	print "%f%%  of the words do not have e " %percentage
+	f.close()
+
+
 
 # Body
 
 
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
+	has_no_e()
+    
 
 if __name__ == '__main__':
     main()
